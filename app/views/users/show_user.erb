@@ -1,0 +1,13 @@
+<h1> Your Games </h1>
+
+<% current_user.games.each do |game| %>
+<h3><a href="/games/<%=game.id %>"><%= game.content%></a></h3>
+    <% end %>
+
+     <br>
+
+    <a href="/games"> Go Back To Your Games </a>
+
+      <br>
+
+    <a href="/logout">Log Out</a>

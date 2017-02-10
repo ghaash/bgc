@@ -1,0 +1,18 @@
+  <h2> Board Game <%= @game.id %> </h2>
+
+  <h3> <%= @game.content %></h3>
+
+    <br></br>
+
+    <form action="/games/<%= @game.id %>/delete" method="post">
+      <input id="hidden" type="hidden" name="_method" value="delete">
+      <input type="submit" value="Delete Game" name="delete">
+    </form>
+
+      <br></br>
+
+    <a href="/games/<%=@game.id%>/edit"> Edit Board Game </a>
+
+    <br>
+
+    <a href="/games"> Return to Board Games </a>

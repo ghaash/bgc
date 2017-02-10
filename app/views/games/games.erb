@@ -1,0 +1,11 @@
+<h1>Welcome, <%= current_user.username %></h1>
+
+<%Game.all.each do |game| %>
+<h3><a href="/games/<%=game.id %>"><%= game.content%></a></h3>
+    <% end %>
+
+    <a href="/games/new">Add A Game</a><br>
+
+    <a href="/users/<%= current_user.slug %>"> My Board Games </a><br>
+
+    <a href="/logout">Log Out</a>
