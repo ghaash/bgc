@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
 
-  get '/users/:slug' do
+  get '/users/:slug' do #get (Read) user through a slug
     @user= User.find_by_slug(params[:slug])
     erb :'users/show_user'
   end
 
-  get '/signup' do
+  get '/signup' do #get (read) sign up page
     if logged_in?
       redirect '/games'
     else
@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     end
   end
 
-  post "/signup" do
+  post "/signup" do #post (create) sign up page to submit
     if !logged_in?
       user = User.new(params)
       if user.save
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
     end
   end
 
-  get '/login' do
+  get '/login' do #get read request logs in user to games view
     if !logged_in?
       erb :'users/login'
     else
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
     end
   end
 
-  post "/login" do
+  post "/login" do #post create user!
     if logged_in?
       redirect "/games"
     else
@@ -50,7 +50,7 @@ class UsersController < ApplicationController
   end
 
 
-  get '/logout' do
+  get '/logout' do #get read request to logout user
     session.clear
     redirect '/login'
   end

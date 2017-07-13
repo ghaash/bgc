@@ -1,7 +1,9 @@
+<%# show_user board games (not needed?) %>
+
 <h1> Your Games </h1>
 
 <% current_user.games.each do |game| %>
-<h3><a href="/games/<%=game.id %>"><%= game.content%></a></h3>
+<h3><a href="/games/<%=game.id %>"><%= game.title%></a></h3>
     <% end %>
 
      <br>

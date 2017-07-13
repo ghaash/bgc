@@ -1,11 +1,17 @@
-  <h2> Edit Games </h2>
+<%# edit games through game.id (tracks the game through the id) post(create) and through params %>
+
+  <h2 class="wrapper"> Edit Games </h2>
 
   <form action="/games/<%=@game.id%>" method="POST">
     <input  id="hidden" type="hidden" name="_method" value="patch">
 
      <label> Board Game </label>
 
-     <input id= "content" type="text" name="content" value="<%= @game.content %>"><br>
+     <input id= "content" type="text" name="games[title]" value="<%= @game.title %>"><br>
+     <input id= "content" type="text" name="games[players]" value="<%= @game.players %>"><br>
+     <input id= "content" type="text" name="games[description]" value="<%= @game.description %>"><br>
+     <input id= "content" type="text" name="games[mechanics]" value="<%= @game.mechanics %>"><br>
+
 
     <br></br>
 

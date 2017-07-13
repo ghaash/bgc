@@ -14,7 +14,10 @@
 ActiveRecord::Schema.define(version: 20170209004123) do
 
   create_table "games", force: :cascade do |t|
-    t.string  "content"
+    t.string  "title"
+    t.string  "players"
+    t.string  "description"
+    t.string  "mechanics"
     t.integer "user_id"
   end
 

@@ -1,11 +1,46 @@
+<%# adds a board game through /games views and post (create) through params of games titles/players/decsription/mechanics %>
+
 <h2> Add A Board Game </h2>
 
 <form action="/games" method="POST">
 
-   <label> Games </label>
-   <input id="content" type="text" name="content"><br>
+   <h3> Games </h3>
+   <label> Title: </label>
+   <input type="text" name="games[title]"><br>
+   <label> # of Players: </label>
+   <input type="text" name="games[players]"><br>
+   <label> Description: </label>
+   <input type="text" name="games[description]"><br>
+   <label> Mechanics: </label>
+   <input type="text" name="games[mechanics]"><br>
 
+   <!-- <label> Players </label>
+   <input type="text" name="content[players]"><br>
+   <label> Difficulty </label>
+   <input type="text" name="content[difficulty]"><br> -->
+
+   <!-- <input type="text" name="game[players]"><br>
+   <input type="text" name=game[difficulty]><br>
+   <input type="text" name="user[username]"><br> -->
   <br></br>
 
   <input type="submit" value="submit">
 </form>
+
+<!-- params[:game][:title]
+
+params = {"content" => "Risk"}
+params = {
+  "game" => {"title" => "Risk", "players" => "2-6", "difficulty" => "easy"},
+  "user" => {"username" => "monkey"}
+}
+User fills out form
+HTTTP request with POst verb and /games url
+Run rake middleware to handle HTTP Requests
+matches HTTP route and HTTp  verb with available routes in the controlle
+controller then manages the request by interacting with the model
+-> binding pry
+the model then interacts with the database
+the database returns response to model
+model returns response to controller
+controller displays the view with or without model information -->

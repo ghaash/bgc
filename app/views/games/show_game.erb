@@ -1,7 +1,17 @@
-  <h2> Board Game <%= @game.id %> </h2>
+<%# shows the user's board games %>
 
-  <h3> <%= @game.content %></h3>
+<% current_user.games.each do |game| %>
+  <h1> Board Game <%= @game.id %> </h1>
+  <h2>Title:</h2>
+  <h3> <%= @game.title %></h3>
+  <h2>Players:</h2>
+  <h3> <%= @game.players %></h3>
+  <h2>Description:</h2>
+  <h3> <%= @game.description %></h3>
+  <h2>Mechanics:</h2>
+  <h3> <%= @game.mechanics %></h3>
 
+<% end %>
     <br></br>
 
     <form action="/games/<%= @game.id %>/delete" method="post">
